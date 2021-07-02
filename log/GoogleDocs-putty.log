@@ -1,0 +1,204 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2021.06.20 13:57:34 =~=~=~=~=~=~=~=~=~=~=~=
+rllr$nlb|rbbnnlnn2bbp$blrlpnlbnnbnn'll`nn$`nrnrr`pnrbbnnbnn'l`nn$`nrnrl`rnrl`lrl`n`
+
+Free heap: 50216
+Free stack: 3804
+
+Connecting to wifi: Funkloch 7272
+.......
+WiFi connected
+IP address: 192.168.178.32
+Connecting to script.google.com
+1. payload: {"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "50216,3804"}
+(POST:385) {"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "50216,3804"}
+(createPostRequest:155) POST /macros/s/AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD/exec?cal HTTP/1.1
+Host: script.google.com
+User-Agent: ESP8266
+Content-Type: application/json
+Content-Length: 121
+
+{"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "50216,3804"}
+
+
+(printRedir:49) POST /macros/s/AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD/exec?cal HTTP/1.1
+Host: script.google.com
+User-Agent: ESP8266
+Content-Type: application/json
+Content-Length: 121
+
+{"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "50216,3804"}
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 302
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) Moved Temporarily
+(getLocationURL:186) _redirHost: (getLocationURL:187) script.googleusercontent.com
+(getLocationURL:188) _redirUrl: (getLocationURL:189) /macros/echo?user_content_key=AmZjF6DAMPiUIhr65WIaqzzxojMiZz9_K8aww7GcYZS1zA5jPgTlrvpYHvJXJG0B9St1Cd26lS2En33DAIQEhTSlcWsYzSu7m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azRxlCG60qhxEg&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo
+(printRedir:49) GET /macros/echo?user_content_key=AmZjF6DAMPiUIhr65WIaqzzxojMiZz9_K8aww7GcYZS1zA5jPgTlrvpYHvJXJG0B9St1Cd26lS2En33DAIQEhTSlcWsYzSu7m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azRxlCG60qhxEg&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo HTTP/1.1
+Host: script.googleusercontent.com
+User-Agent: ESP8266
+
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 200
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) OK
+(fetchHeader:210) Content-Type: text/plain; charset=utf-8
+(fetchHeader:210) Access-Control-Allow-Origin: *
+(fetchHeader:210) Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+(fetchHeader:210) Pragma: no-cache
+(fetchHeader:210) Expires: Mon, 01 Jan 1990 00:00:00 GMT
+(fetchHeader:210) Date: Sun, 20 Jun 2021 11:57:27 GMT
+(fetchHeader:210) X-Content-Type-Options: nosniff
+(fetchHeader:210) X-Frame-Options: SAMEORIGIN
+(fetchHeader:210) Content-Security-Policy: frame-ancestors 'self'
+(fetchHeader:210) X-XSS-Protection: 1; mode=block
+(fetchHeader:210) Server: GSE
+(fetchHeader:210) Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+(fetchHeader:210) Accept-Ranges: none
+(fetchHeader:210) Vary: Accept-Encoding
+(fetchHeader:210) Transfer-Encoding: chunked
+(fetchHeader:210) 
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 7
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 0
+2. payload: {"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "20432,1984"}
+(POST:385) {"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "20432,1984"}
+(createPostRequest:155) POST /macros/s/AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD/exec?cal HTTP/1.1
+Host: script.google.com
+User-Agent: ESP8266
+Content-Type: application/json
+Content-Length: 121
+
+{"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "20432,1984"}
+
+
+(printRedir:49) POST /macros/s/AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD/exec?cal HTTP/1.1
+Host: script.google.com
+User-Agent: ESP8266
+Content-Type: application/json
+Content-Length: 121
+
+{"command": "appendRow",                     "sheet_name": "Tabellenblatt1",                     "values": "20432,1984"}
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 302
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) Moved Temporarily
+(getLocationURL:186) _redirHost: (getLocationURL:187) script.googleusercontent.com
+(getLocationURL:188) _redirUrl: (getLocationURL:189) /macros/echo?user_content_key=cfgJO1MYCVfaF95oCzZpkgPI8iOLsABqa9gJ6RrxVzonGaCsLrX8vaoYmsbvJIsA6Qz6YXO7a4-En33DAIQEhSXxnUxfI8wtm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azRxlCG60qhxEg&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo
+(printRedir:49) GET /macros/echo?user_content_key=cfgJO1MYCVfaF95oCzZpkgPI8iOLsABqa9gJ6RrxVzonGaCsLrX8vaoYmsbvJIsA6Qz6YXO7a4-En33DAIQEhSXxnUxfI8wtm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azRxlCG60qhxEg&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo HTTP/1.1
+Host: script.googleusercontent.com
+User-Agent: ESP8266
+
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 200
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) OK
+(fetchHeader:210) Content-Type: text/plain; charset=utf-8
+(fetchHeader:210) Access-Control-Allow-Origin: *
+(fetchHeader:210) Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+(fetchHeader:210) Pragma: no-cache
+(fetchHeader:210) Expires: Mon, 01 Jan 1990 00:00:00 GMT
+(fetchHeader:210) Date: Sun, 20 Jun 2021 11:57:29 GMT
+(fetchHeader:210) X-Content-Type-Options: nosniff
+(fetchHeader:210) X-Frame-Options: SAMEORIGIN
+(fetchHeader:210) Content-Security-Policy: frame-ancestors 'self'
+(fetchHeader:210) X-XSS-Protection: 1; mode=block
+(fetchHeader:210) Server: GSE
+(fetchHeader:210) Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+(fetchHeader:210) Accept-Ranges: none
+(fetchHeader:210) Vary: Accept-Encoding
+(fetchHeader:210) Transfer-Encoding: chunked
+(fetchHeader:210) 
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 7
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 0
+
+GET: Write into cell 'A1'
+=========================
+url , host: script.google.com/macros/s/AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD/exec?value=Hello
+==> now calling client->GET()
+(GET:354) GET request w/o payload
+(printRedir:49) GET /macros/s/AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD/exec?value=Hello HTTP/1.1
+Host: script.google.com
+User-Agent: ESP8266
+
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 302
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) Moved Temporarily
+(getLocationURL:186) _redirHost: (getLocationURL:187) script.googleusercontent.com
+(getLocationURL:188) _redirUrl: (getLocationURL:189) /macros/echo?user_content_key=l-CRExsYoZxiUMyPiGi3qyTzaOlO3DEY5NAlEebZbvOub2FkAkTFwAIsLlw_BhGLKmfkkD54RlKEn33DAIQEhbrNm1E9ytzbm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azQ-3rK2SyXkYMzsv8v-EaOB&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo
+(printRedir:49) GET /macros/echo?user_content_key=l-CRExsYoZxiUMyPiGi3qyTzaOlO3DEY5NAlEebZbvOub2FkAkTFwAIsLlw_BhGLKmfkkD54RlKEn33DAIQEhbrNm1E9ytzbm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azQ-3rK2SyXkYMzsv8v-EaOB&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo HTTP/1.1
+Host: script.googleusercontent.com
+User-Agent: ESP8266
+
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 200
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) OK
+(fetchHeader:210) Content-Type: text/plain; charset=utf-8
+(fetchHeader:210) Access-Control-Allow-Origin: *
+(fetchHeader:210) Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+(fetchHeader:210) Pragma: no-cache
+(fetchHeader:210) Expires: Mon, 01 Jan 1990 00:00:00 GMT
+(fetchHeader:210) Date: Sun, 20 Jun 2021 11:57:32 GMT
+(fetchHeader:210) X-Content-Type-Options: nosniff
+(fetchHeader:210) X-Frame-Options: SAMEORIGIN
+(fetchHeader:210) Content-Security-Policy: frame-ancestors 'self'
+(fetchHeader:210) X-XSS-Protection: 1; mode=block
+(fetchHeader:210) Server: GSE
+(fetchHeader:210) Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+(fetchHeader:210) Accept-Ranges: none
+(fetchHeader:210) Vary: Accept-Encoding
+(fetchHeader:210) Transfer-Encoding: chunked
+(fetchHeader:210) 
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 43
+Successfully wrote: Hello
+into spreadsheet.
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 0
+<== returned from client-GET()
+==> now calling again client->GET()
+GET Data from cell 'A1':
+(GET:354) GET request w/o payload
+(printRedir:49) GET /macros/s/AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD/exec?read HTTP/1.1
+Host: script.google.com
+User-Agent: ESP8266
+
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 302
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) Moved Temporarily
+(getLocationURL:186) _redirHost: (getLocationURL:187) script.googleusercontent.com
+(getLocationURL:188) _redirUrl: (getLocationURL:189) /macros/echo?user_content_key=s3MHctbZzWuc1PRTCDHFMAqQA33jiU3r3Pvq7X88VeztUPbkwb6-xwU_woJKfX3dEQd9zaTAdf2En33DAIQEhVjaL3p2N60am5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azQB_TUfiB5i1w&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo
+(printRedir:49) GET /macros/echo?user_content_key=s3MHctbZzWuc1PRTCDHFMAqQA33jiU3r3Pvq7X88VeztUPbkwb6-xwU_woJKfX3dEQd9zaTAdf2En33DAIQEhVjaL3p2N60am5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBaE28m1NIQq9wDIsGSW4h31sGF7SFV_mgWjfaKs_vkvRT0BuE95azQB_TUfiB5i1w&lib=MkpRn5C3mm1b3R5CR4eoI4le2EpWJ2gRo HTTP/1.1
+Host: script.googleusercontent.com
+User-Agent: ESP8266
+
+
+
+(getResponseStatus:339) Status code: (getResponseStatus:340) 200
+(getResponseStatus:341) Reason phrase: (getResponseStatus:342) OK
+(fetchHeader:210) Content-Type: text/plain; charset=utf-8
+(fetchHeader:210) Access-Control-Allow-Origin: *
+(fetchHeader:210) Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+(fetchHeader:210) Pragma: no-cache
+(fetchHeader:210) Expires: Mon, 01 Jan 1990 00:00:00 GMT
+(fetchHeader:210) Date: Sun, 20 Jun 2021 11:57:35 GMT
+(fetchHeader:210) X-Content-Type-Options: nosniff
+(fetchHeader:210) X-Frame-Options: SAMEORIGIN
+(fetchHeader:210) Content-Security-Policy: frame-ancestors 'self'
+(fetchHeader:210) X-XSS-Protection: 1; mode=block
+(fetchHeader:210) Server: GSE
+(fetchHeader:210) Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+(fetchHeader:210) Accept-Ranges: none
+(fetchHeader:210) Vary: Accept-Encoding
+(fetchHeader:210) Transfer-Encoding: chunked
+(fetchHeader:210) 
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 5
+Hello
+(fetchBodyChunked:278) Chunk Size: (fetchBodyChunked:279) 0
+<== returned from client-GET()
+
+Series of GET and POST requests
+===============================
+Free heap: 19992
+Free stack: 1712
+HTTPS client deleted
+
