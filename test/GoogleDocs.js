@@ -31,9 +31,15 @@
 // Script examples
 // https://developers.google.com/adwords/scripts/docs/examples/spreadsheetapp
 
-var SS = SpreadsheetApp.openById('1ryZeOuQxnvKT6_mOCMoTqx1dwVJqlJv_kTI4mEtaHG0');
+// Bibliotheken: 
+//  BetterLog
+var SS = SpreadsheetApp.getActiveSpreadsheet();
+// var SS = SpreadsheetApp.openById('1ryZeOuQxnvKT6_mOCMoTqx1dwVJqlJv_kTI4mEtaHG0');
 var sheet = SS.getSheetByName('Tabellenblatt1');
 var str = "";
+Logger = BetterLog.useSpreadsheet(); // defaults to active spreadsheet
+//Logger = BetterLog.useSpreadsheet('1ryZeOuQxnvKT6_mOCMoTqx1dwVJqlJv_kTI4mEtaHG0');
+Logger.DATE_TIME_LAYOUT = "dd.MM.yy HH:mm:ss";
 
 function onOpen(){
   var ui = SpreadsheetApp.getUi();
@@ -56,6 +62,7 @@ function doPost(e) {
     parsedData = JSON.parse(e.postData.contents);
   } 
   catch(f){
+    Logger.warning("doPost(65): " + "Error in parsing request body: " + f.message);
     return ContentService.createTextOutput("Error in parsing request body: " + f.message);
   }
    
@@ -73,7 +80,7 @@ function doPost(e) {
          var tmp = SS.getSheetByName(parsedData.sheet_name);
          var nextFreeRow = tmp.getLastRow() + 1;
          var dataArr = parsedData.values.split(",");
-         
+         Logger.log("doPost(82): "+ dataArr);
          tmp.appendRow(dataArr);
          
          str = "Success";
@@ -82,11 +89,12 @@ function doPost(e) {
        
        
     }
-    
+    Logger.log("doPost(92): appended new line " + dataArr);
     return ContentService.createTextOutput(str);
   } // endif (parsedData !== undefined)
   
   else{
+    Logger.log("doPost(97): " + "Error! Request body empty or in incorrect format.");
     return ContentService.createTextOutput("Error! Request body empty or in incorrect format.");
   }
   
@@ -105,10 +113,12 @@ function doGet(e){
   }
   
   if (read !== undefined){
-    var now = Utilities.formatDate(new Date(), "GMT+2", "yyyy-MM-dd'T'hh:mm a'z'").slice(0,19);
+    var now = Utilities.formatDate(new Date(), "GMT+2", "dd.MM.yyyy hh:mm z");
+    Logger.log("doGet(115): " + now);
     sheet.getRange('D1').setValue(now);
     var count = (sheet.getRange('C1').getValue()) + 1;
     sheet.getRange('C1').setValue(count);
+    Logger.log("doGet(119): " + count);
     return ContentService.createTextOutput(sheet.getRange('A1').getValue());
   }
   
@@ -117,12 +127,15 @@ function doGet(e){
     
   var range = sheet.getRange('A1');
   var retval = range.setValue(val).getValue();
-  var now = Utilities.formatDate(new Date(), "GMT+2", "yyyy-MM-dd'T'hh:mm a'z'").slice(0,19);
+  var now = Utilities.formatDate(new Date(), "GMT+2", "dd.MM.yyyy hh:mm z");
+  Logger.log("doGet(129): " + now);
   sheet.getRange('B1').setValue(now);
   sheet.getRange('C1').setValue('0');
+  Logger.log("doGet(129): " + "0");
   
-  if (retval == e.parameter.value)
-    return ContentService.createTextOutput("Successfully wrote: " + e.parameter.value + "\ninto spreadsheet.");
+  if (retval == e.parameter.value){
+    Logger.log("doGet(137): " + e.parameter.value);
+    return ContentService.createTextOutput("Successfully wrote: " + e.parameter.value + "\ninto spreadsheet.");}
   else
     return ContentService.createTextOutput("Unable to write into spreadsheet.\nCheck authentication and make sure the cursor is not on cell 'A1'." + retval + ' ' + e.parameter.value);
 }

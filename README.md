@@ -24,6 +24,8 @@ In Setup() werden drei URL-Strings vorbereitet, die im Weiteren Verwendung finde
     Der komplette POST-String sieht wie folgt aus:
     >script.google.com/macros/s/AKfycbw4W73gKtMl64jiIIE6hh0lVRn1MKXDJg9VXXJkSI9Wo8oqepw/exec?cal - {"command": "appendRow", "sheet_name": "Tabellenblatt1", "values": "50416,3820"}
 
+    Falls das Tupel zu "values" um einen oder mehrere komma-separierte Werte ergänzt wird, wird doPost() mehr Spalten füllen.
+
     Als erstes wird in *doPost()* die gesendete Payload geparsed. Falls es sich um eine json-Struktur handelt, wird nach den String *appendRow* im Command-Teil gesucht, und dann im sheet_name-Teil der Name des Tabellenblatts gelesen. Schließlich werden die Wertepaare im values-Teil in ein Array kopiert. Danach wird dieses Array per *appendRow(dataArr)* in die Tabelle eingefügt.
 
 - url: 
@@ -76,10 +78,45 @@ Dann funktionieren beide Arten der Bereitstellung.
 
  **Allerdings** wird beim Neuen Editor jeweils eine neue GScriptID erstellt. Vgl. https://groups.google.com/g/google-apps-script-community/c/qhiqjGabQpI?pli=1. Hier heißt es , es sei möglicherweise ein Bug.
 
+ **Update**: Im Neuen Editor unter "Bereitstellen --> Bereitstellungen verwalten" auf "Bearbeiten" clicken und dann "New Version" auswählen (analog zum alten Editor). **So wird die gleiche ID weiterverwendet**.
+
+
 
 ### 2.3 Funktionen
-  - doGet(), doPost()
-  - Logging-Funktionen (z.B. BetterLog())
+#### 2.3.1 doGet()
+Die Funktion doGet() wird aufgerufen bei Empfang des GET-Requests. Dabei werden die übergebenen Parameter (folgend dem "/exec?") in die (reservierte) Variable e übertragen. 
+
+In doGet() wird als erstes das übertragene Keyword evaluiert. In diesem Fall sind es drei definierte Keywords (val, cal, read). Ist einer von diesen gesetzt (if-Abfrage "!== undefined"), wird in entsprechenden if-Clause die Auswertung gemacht.
+
+- if (cal !== undefined)
+
+  --> getEventsOneWeek(): hier nicht verwendet
+
+- if (read !== undefined)
+
+  Schreibe akteullen Zeitstempel in Zelle D1 und schreibe Variable Count in Zelle C1
+
+- if (value === undefined)
+
+  Fehlerabhandlung: Schreibe Fehlermeldung als Html-Text (ContentService.createTextOutput()) zurück.
+
+- generelle Weiterverarbeitung
+
+  Schreibe aktuellen Zeitstemple in Zelle B1 und schreibe den Wert 0 in Zelle C1
+
+#### 2.3.2 doPost()
+Die Funktion doPost() wird aufgerufen bei Emfang eines POST-Requests. Zunächst werden die empfangenen Daten (e.postData.contents) auf eine JSON-Syntax hin geprüft und geparsed. Falls das Parsing erfolgreich (if (parsedData !== undefined)), werden die einzelenen Bestandteile des Contents ausgewertet.
+
+Im vorliegenden Fall gibt es drei Schlüsselworte:
+- parsedData.command
+
+  falls das Command == "appendRow", wird das Tabellenblatt parsedDate.sheet_name geöffnet und das Wertepaar "dataArr = parsedData.values.split(",")" in die letzte Zeile des Tabellenblattes geschrieben.
+
+#### 2.3.3 Logging-Funktionen (z.B. BetterLog())
+
+Diese Logging-Bibliothek muss zum AppScript-Projekt hinzugefügt werden. Hierzu (im neuen Editor) unter Biblitheken hinzufügen die Script-ID eingeben. Dann wird unter Bilbliotheken die BetterLog-Bibliothek angezeigt. (vgl. auch https://github.com/peterherrmann/BetterLog)
+
+
 
 ## 3. Versuche und Variationen
 

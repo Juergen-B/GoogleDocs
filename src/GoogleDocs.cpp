@@ -21,7 +21,8 @@ const char *password = "zappel1234567";
 const char *host = "script.google.com";
 // Replace with your own script id to make server side changes
 //const char *GScriptId = "AKfycbx7NzQc1q1MYUoEoEgImIYmfAthxurn370duMgD";
-const char *GScriptId = "AKfycbxg9LsapxjFMlxA6wG0ldMWgGekkXS2-oH0SCz6slP_G7Y2tqrHvhZICYiNo3dkbZ0Y";
+const char *GScriptId = "AKfycbykuwhRy3SeIarquMNqkCY5vVTiZM5dcamFkaPl48uhbOGiNG2lF5cNbP0ZOiYzE_Xs";
+//https://script.google.com/macros/library/d/12Rz_sVqXBTxcvOvQdVh-2zI41Hw0_rFAe6VPjf_xBv2jmkXHIg6ucrZe/44
 
 const int httpsPort = 443;
 
@@ -79,8 +80,10 @@ void setup()
   Serial.println("");
   Serial.println("WiFi connected");
   Serial.print("IP address: ");
+  long rssi;
+  rssi = WiFi.RSSI();
   Serial.println(WiFi.localIP());
-  Serial.println();
+  Serial.printf("WiFi signal strength %ld\n",rssi);
 
   // Use HTTPSRedirect class to create a new TLS connection
   client = new HTTPSRedirect(httpsPort);
@@ -133,7 +136,7 @@ void setup()
   Serial.println(" POST 1. payload");
   client->POST(url2, host, payload, false);
   Serial.println("==================");
-  payload = payload_base + "\"" + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + "\"}";
+  payload = payload_base + "\"" + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + "," + WiFi.RSSI() +"\"}";
   Serial.print("2. payload: ");
   Serial.printf("(host, url2): %s%s - ", host, url2.c_str());
   Serial.println(payload);
