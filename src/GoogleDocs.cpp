@@ -129,7 +129,7 @@ void setup()
   // Send memory data to Google Sheets
   // url2 addresses Calender Data, to be commented out
 
-  payload = payload_base + "\"" + free_heap_before + "," + free_stack_before + "\"}";
+  payload = payload_base + "\"" + free_heap_before + "," + free_stack_before + "," + WiFi.RSSI() + "\"}";
   Serial.print("1. payload: ");
   Serial.printf("(host, url2): %s%s - ", host, url2.c_str());
   Serial.println(payload);

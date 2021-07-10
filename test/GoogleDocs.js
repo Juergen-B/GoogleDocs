@@ -62,10 +62,10 @@ function doPost(e) {
     parsedData = JSON.parse(e.postData.contents);
   } 
   catch(f){
-    Logger.warning("doPost(65): " + "Error in parsing request body: " + f.message);
+    Logger.warning("doPost(catch): " + "Error in parsing request body: " + f.message);
     return ContentService.createTextOutput("Error in parsing request body: " + f.message);
   }
-   
+  Logger.log("doPost(e.postData): " + JSON.stringify( e.postData.contents)) ;
   if (parsedData !== undefined){
     // Common items first
     // data format: 0 = display value(literal), 1 = object value
@@ -80,7 +80,8 @@ function doPost(e) {
          var tmp = SS.getSheetByName(parsedData.sheet_name);
          var nextFreeRow = tmp.getLastRow() + 1;
          var dataArr = parsedData.values.split(",");
-         Logger.log("doPost(82): "+ dataArr);
+         //dataArr = new Date() + "," + dataArr;
+         Logger.log("doPost(appendRow): "+ dataArr);
          tmp.appendRow(dataArr);
          
          str = "Success";
@@ -89,12 +90,12 @@ function doPost(e) {
        
        
     }
-    Logger.log("doPost(92): appended new line " + dataArr);
+    Logger.log("doPost(return): appended new line " + dataArr);
     return ContentService.createTextOutput(str);
   } // endif (parsedData !== undefined)
   
   else{
-    Logger.log("doPost(97): " + "Error! Request body empty or in incorrect format.");
+    Logger.log("doPost(error): " + "Error! Request body empty or in incorrect format.");
     return ContentService.createTextOutput("Error! Request body empty or in incorrect format.");
   }
   
@@ -107,18 +108,18 @@ function doGet(e){
   var val = e.parameter.value;
   var cal = e.parameter.cal;
   var read = e.parameter.read;
-  
+  Logger.log("doGet(Entry): " + JSON.stringify(e.parameters));
   if (cal !== undefined){
     return ContentService.createTextOutput(GetEventsOneWeek());
   }
   
   if (read !== undefined){
-    var now = Utilities.formatDate(new Date(), "GMT+2", "dd.MM.yyyy hh:mm z");
-    Logger.log("doGet(115): " + now);
+    var now = Utilities.formatDate(new Date(), "GMT+2", "dd.MM.yyyy HH:mm");
+    Logger.log("doGet(timestamp#1): " + now);
     sheet.getRange('D1').setValue(now);
     var count = (sheet.getRange('C1').getValue()) + 1;
     sheet.getRange('C1').setValue(count);
-    Logger.log("doGet(119): " + count);
+    Logger.log("doGet(count#1): " + count);
     return ContentService.createTextOutput(sheet.getRange('A1').getValue());
   }
   
@@ -127,14 +128,14 @@ function doGet(e){
     
   var range = sheet.getRange('A1');
   var retval = range.setValue(val).getValue();
-  var now = Utilities.formatDate(new Date(), "GMT+2", "dd.MM.yyyy hh:mm z");
-  Logger.log("doGet(129): " + now);
+  var now = Utilities.formatDate(new Date(), "GMT+2", "dd.MM.yyyy HH:mm");
+  Logger.log("doGet(timestamp#2): " + now);
   sheet.getRange('B1').setValue(now);
   sheet.getRange('C1').setValue('0');
-  Logger.log("doGet(129): " + "0");
+  Logger.log("doGet(count#2): " + "0");
   
   if (retval == e.parameter.value){
-    Logger.log("doGet(137): " + e.parameter.value);
+    Logger.log("doGet(success): " + e.parameter.value);
     return ContentService.createTextOutput("Successfully wrote: " + e.parameter.value + "\ninto spreadsheet.");}
   else
     return ContentService.createTextOutput("Unable to write into spreadsheet.\nCheck authentication and make sure the cursor is not on cell 'A1'." + retval + ' ' + e.parameter.value);
