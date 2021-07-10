@@ -137,7 +137,7 @@ Diese Logging-Bibliothek muss zum AppScript-Projekt hinzugefügt werden. Hierzu 
   > `Connection failed. Retrying...`
 
   > `Connection failed. Retrying...`
-
+  
   > `Could not connect to server: script.google.com`
 
   Mithin muss der Abschnitt zu Fingerprint auskommentiert bleiben.
@@ -145,7 +145,9 @@ Diese Logging-Bibliothek muss zum AppScript-Projekt hinzugefügt werden. Hierzu 
 ### 3.2 sonstige Hilfsfunktionen der HTTPSRedirect-Library
 
 
-- ESP8266 vs ESP32
-- 
+#### 3.2.1 ESP8266 vs ESP32
+
+Beispiel für GoogleSheet-Kommunikation mit ESP32 sind zu finden in "Dobbie-Watch_V1.2.ino" und "ESP-GoogleSheets.h".
+Das bleibt nachzuvollziehen. 
 
 ## 4. Debugging.
